@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans&display=swap');
+
+/* General */
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+h1{
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+    color: #5e5d5d;
+    margin: 0px;
+    margin-bottom: 12px;
+}
+h2{
+    font-size: 24px;
+    margin: 0px;
+    margin-bottom: 8px;
+}
+p{
+    font-size: 14px;
+    line-height: 170%;
+    margin: 0;
+    margin-bottom: 7px;
+}
+a{
+    font-size: 16px;
+    font-weight: bold;
+    color: #f90;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 0px;
+}
+li{
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: inline; /* gör om listan så att den visas som inline dvs på en rad */
+    margin-right: 15px;
+}
+th{
+    text-align: left;
+}
+td{
+    padding-right: 15px;
+    padding-bottom: 5px;
+    vertical-align: top;
+}
+.block-space{
+    margin-bottom: 15px;
+    /*padding-bottom: 15px;*/
+    /*background-color: green;*/
+}
+#todoHint{
+    background-color: red;
+    font-size: 16px;
+}

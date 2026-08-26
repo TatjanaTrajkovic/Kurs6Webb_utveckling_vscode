@@ -1,0 +1,48 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+h1 {
+    color: rgb(250, 5, 246);
+    font-size: 40px;
+    margin: 0;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color:rgb(6, 200, 243);
+}
+
+a {
+    font-size: 14px;
+    color:blue;
+    display: block;
+    margin: 20px 0;
+}
+
+section p{
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+
+footer {
+    background-color: rgb(235, 230, 230);
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+    margin-top: 50px;
+}
+

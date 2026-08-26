@@ -1,0 +1,79 @@
+/* Mobile first */
+body{
+    font-family: Helvetica, Arial, san-serif;
+    margin: 0;
+}
+h1{
+    font-family: Georgia, Helvetica, Arial, san-serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 12px;
+}
+p{
+    font-size:16px;
+    line-height:130%;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 7px;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+li{
+    margin-bottom: 7px;
+}
+a {
+    font-size: 18px;
+    color: #ffbd00;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.nav-list{
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: gray;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    nav.nav-list{ /* Centerar navigeringsmenyn */
+        text-align: center;
+    }
+    nav.nav-list ul li{
+        display: inline; /* Visar menyn som inline */
+    }
+    p{
+        font-size: 14px;
+    }
+    h1{
+        font-size: 30px;
+    }
+    a{
+        font-size:  15px;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+    nav.nav-list{
+        text-align: center; /* Centerar navigeringsmenyn */
+        margin-bottom: 45px;
+    }
+    nav.nav-list ul li{
+        display: inline; /* Visar menyn som inline */
+    }
+    p{
+        font-size: 14px;
+    }
+    h1{
+        font-size: 30px;
+    }
+    a{
+        font-size:  15px;
+    }
+}

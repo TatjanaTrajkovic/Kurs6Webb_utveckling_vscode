@@ -1,0 +1,14 @@
+{
+  "todos": [
+    {
+      "todoTitle": "Handla",
+      "todoContent": "Mjölk, smör, bröd",
+      "todoDate": "2022-08-01"
+    },
+    {
+      "todoTitle": "Rätta prov",
+      "todoContent": "Java Webbprogrammering",
+      "todoDate": "2022-08-05"
+    }
+  ]
+  }

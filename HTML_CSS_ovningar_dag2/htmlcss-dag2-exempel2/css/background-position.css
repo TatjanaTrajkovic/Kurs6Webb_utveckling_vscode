@@ -1,0 +1,7 @@
+body {
+    background-image: url("../img/tulip.gif");
+    background-repeat: no-repeat;
+    background-position: center top;
+    color: #665544;
+    padding: 20px;
+}

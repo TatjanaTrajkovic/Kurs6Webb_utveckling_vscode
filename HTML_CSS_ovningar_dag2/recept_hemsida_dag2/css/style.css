@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    color: #222222;
+    
+}
+
+p {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+}
+
+h1 {
+    color: #C30FFF;
+    font-size: 40px;
+    margin: 0;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color:#6C00FF;
+}
+
+a {
+    font-size: 14px;
+    color:#FF0F4D;
+    display: block;
+    margin: 20px 0;
+}
+
+a:hover {
+    color: #C30FFF;
+}
+
+.recipes {
+    display: grid;
+    /*grid-template-columns: repeat(3, 250px);*/
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.recipe-card {
+    background-color: #ffffff;
+    border: 2px solid #FF0FDD;
+    padding: 20px;
+    border-radius: 10px;
+    /*width: 250px;*/
+   
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.recipe-card h3 {
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.recipe-card p {
+    margin: 0 0 15px 0;
+}
+
+section p{
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.ingrendients-table {
+    border-collapse: collapse;
+    width: 300px;
+    margin: 20px 0;
+}
+
+.ingrendients-table th {
+    background-color: #C30FFF;
+    color: white;
+    text-align: left;
+    padding: 10px;
+}
+
+.ingrendients-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #dddddd;
+}
+
+ul, ol {
+    font-size: 14px;
+    line-height: 1.6;
+    padding-left: 25px;
+}
+
+ul li::marker {
+    color: #FF0F4D;
+}
+
+ol li::marker {
+    color: #6C00FF;
+    font-weight: 600;
+}
+
+.review {
+    margin-top: 40px;
+    max-width: 500px;
+}
+
+.review form {
+    display: grid;
+    gap: 10px;
+}
+
+.review label {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.review input,
+.review select,
+.review textarea {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+.review button {
+    background-color: #FF0F4D;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.review button:hover {
+    background-color: #C30FFF;
+}
+
+footer {
+    background-color: rgb(235, 230, 230);
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+    margin-top: 50px;
+}
+

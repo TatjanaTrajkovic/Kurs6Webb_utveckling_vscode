@@ -1,0 +1,28 @@
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    /*flex-direction: row;*/
+    /*
+    flex-direction: row;
+    flex-direction: row-reverse;
+
+    flex-direction: column;
+    flex-direction: column-reverse;
+    */
+}
+article{
+    padding: 10px;
+}
+.art-1{
+    background-color: red;
+}
+.art-2{
+    background-color: green;
+}
+.art-3{
+    background-color: yellow;
+}
+.art-4{
+    background-color: orange;
+}

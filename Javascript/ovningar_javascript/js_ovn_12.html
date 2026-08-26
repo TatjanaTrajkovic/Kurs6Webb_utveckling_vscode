@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/js_ovn_12.js" defer></script>
+</head>
+<body>
+    
+    <h1>Övning 12- Pizzabeställning</h1>
+
+    <form id="pizzaForm">
+
+        <label for="pizza">Välj pizza:</label>
+        
+        <select id="pizza">
+            <option value="Margherita">Margherita</option>
+            <option value="Vesuvio">Vesuvio</option>
+            <option value="Capriccosa">Capriccosa</option>
+        </select>
+
+        <label for="antal">Antal pizzor:</label>
+        <input type="number" id="antal">
+
+        <button type="submit">Beställ</button>
+
+    </form>
+
+    <p id="bestallning"></p>
+    <p id="felmeddelande"></p>
+
+
+</body>
+</html>
+
+
+<!-- Övning 12 – Utveckla ”Pizzabeställningen” Övning 5 från Dag1
+Gör en drop-down-meny där man får välja på några pizzor. Du kan titta på exemplet
+javascript-dag2-event/form hur man hämtar värden från en select, selectedIndex i
+Javascript. Du behöver dock skriva om det något då det i det exemplet är kopplat direkt till
+ett event på select-menyn men nu är det ett event på en submit av formuläret som ska
+komma åt värdet.
+Ta bort textfältet där man anger pris. Gör istället om koden så att man har en if-sats som
+bestämmer pris för den pizza man har valt i drop-down-menyn.
+Har kvar delen med 10 % rabatt för en beställning över 150 kr.
+Fördjupning: Gör så att man måste skriva in minst en pizza innan man gör en beställning. -->
+

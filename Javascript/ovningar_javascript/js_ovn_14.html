@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/js_ovn_14.js" defer></script>
+</head>
+<body>
+    
+    <h1>Övning 14- Att göra lista</h1>
+
+    <form id="todoForm">
+
+        <label for="todo">Ny uppgift:</label>
+        <input type="text" id="todo">
+
+        <button type="submit">Lägg till</button>
+
+    </form>
+
+    <button type="button" id="visaLista">Visa lista</button>
+    <button type="button" id="sorteraLista">Sortera lista</button>
+    <button type="button" id="slumpaTodo">Slumpa uppgift</button>
+
+    <div id="todoLista"></div>
+
+    <form id="uppdateraForm">
+
+        <label for="gammalTodo">Uppgift att ändra:</label>
+        <input type="text" id="gammalTodo">
+
+        <label for="nyTodo">Nytt namn:</label>
+        <input type="text" id="nyTodo">
+
+        <button type="submit">Uppdatera</button>
+    </form>
+
+
+</body>
+</html>
+
+
+<!-- Övning 14 – En enkel Att-göra-lista
+Titta på exemplet från Dag 2 array-names.
+Du ska nu göra en enkel Att-göra-lista där man får mata in en ”post” i listan i ett textfält i ett
+formulär.
+Det ska också finnas en knapp som visar att-göra-listan när man trycker på den dvs visa
+innehållet i en array.
+Så långt finns det exempel i array-names-exemplet.
+Nu ska du lägga till några funktioner för att påverka/ändra innehållet i arrayen. Titta på
+exemplet javascript-exempel-array från Dag 1 för kodexempel (hur man använder inbyggda
+metoder för arrayer i Javascript).
+1. Gör en knapp som kan visa en sorterad att-göra-lista sort(). Gör en egen funktion för det.
+2. Gör ett nytt formulär på html-sidan där man får mata in vilken ”post” man vill uppdatera.
+Det ska finnas ett textfält att skriva in det gamla namnet på ”posten” och ett till textfält för
+att skriva in ett nytt namn. Gör en egen funktion för det i javascript och koppla en
+addEventListener till det nya formuläret.
+Använd (t ex) let pos = todos.indexOf(’Handla’) och därefter todos[pos] =
+”Värdet från
+textfältet med det nya namnet på posten i att-göra-listan”.
+Fördjupning: Gör en knapp där man får slumpa fram en ”post” i att-göra-listan. Använd
+Math.random för att kunna slumpa fram vilket index i arrayen som ska visas samt length()
+för att se hur stor arrayen är så att du kan hitta/räkna ut slutvärdet när du ska göra
+slumptalet.
+length() för en array kan du läsa om på
+https://www.w3schools.com/jsref/jsref_length_array.asp.
+let randomNum = Math.floor((Math.random() * 10)); Slumpar mellan 0 och 10, byt ut 10.
+ -->
+
+<!-- Skriv en uppgift: [ Handla        ] [Lägg till]
+
+[Visa lista] [Sortera lista] [Slumpa uppgift]
+
+Att göra:
+Handla
+Städa
+Plugga
+
+Uppdatera en uppgift:
+Gamla namnet: [ Handla ]
+Nya namnet:   [ Köpa mat ]
+[Uppdatera] -->

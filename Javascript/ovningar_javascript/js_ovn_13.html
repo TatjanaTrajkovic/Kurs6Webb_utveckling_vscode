@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/js_ovn_13.js" defer></script>
+</head>
+<body>
+
+    <h1>Övning 13</h1>
+
+    <form id="temperaturForm">
+
+        <label for="temperatur">Temperatur:</label>
+        <input type="text" id="temperatur">
+
+        <label for="enhet">Omvandla till:</label>
+
+        <select id="enhet">
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="celsius">Celsius</option>
+        </select>
+
+        <button type="submit">Omvandla</button>
+
+    </form>
+
+    <p id="resultat"></p>
+
+</body>
+</html>
+
+<!-- Övning 13 – Utveckla ”Konvertera Celisus till Fahrenheit” Övning 7 från Dag 1
+Gör om så att användaren kan välja om det ska omvandlas till Celsius eller Fahrenheit (gör
+valet i en drop-down-meny, samma som i övning 12 för Pizzabeställningen).
+fahrenheit = celsius * 9 / 5 + 32
+celsius = (fahrenheit - 32) * 5 / 9
+Lägg omvandlingen till celsius respektive fahrenheit i egna funktioner i koden.
+ -->

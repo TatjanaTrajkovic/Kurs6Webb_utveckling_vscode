@@ -1,0 +1,17 @@
+.grid-container{
+    max-width: 1000px;
+    background-color: #eee;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /*grid-template-columns: repeat(3, 1fr); /* fr står för fraction och anpassas utifrån hur mycket plats som finns för varje grid */
+    /*grid-template-columns: 1fr 1fr;*/
+    /*grid-template-columns: repeat(2, 1fr);*/
+    /*grid-template-columns: 300px 1fr;*/
+    grid-template-rows: 200px auto 200px;
+    grid-gap: 10px;
+}
+.grid-item{
+    background-color: #999;
+    padding: 10px;
+}

@@ -1,0 +1,87 @@
+/* Mobile first */
+body{
+    background-color: red;
+    margin: 20px;
+}
+section{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px auto auto 200px;
+    grid-template-areas:
+    "header"
+    "navigation"
+    "main-content"
+    "footer";
+    grid-gap: 20px;
+}
+header{
+    grid-area: header;
+    background-color: black;
+    padding: 50px;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+nav{
+    grid-area: navigation;
+    background-color: #ccc;
+}
+nav.nav-list{
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: gray;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+li{
+    margin-bottom: 7px;
+}
+a {
+    font-size: 18px;
+    color: #ffbd00;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+main{
+    grid-area: main-content;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    background-color: blue;
+}
+
+main article{
+    background-color: yellow;
+    padding: 20px;
+}
+footer{
+    grid-area: footer;
+    background-color: pink;
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+    body{
+        background-color: gold;
+    }
+    section.grid-container{
+        width: 1000px;
+        margin: 20px auto;
+    }
+    main{
+        grid-template-columns: 1fr 1fr;
+    }
+    nav.nav-list{ /* Centerar navigeringsmenyn */
+        text-align: center;
+    }
+    nav.nav-list ul li{
+        display: inline; /* Visar menyn som inline */
+        padding: 10px;
+    }
+}
+
