@@ -29,6 +29,4 @@ async function getTodos() {
     console.error(error.message);
   }
 }
-
-//anropa fumktion
-getTodos();
+ getTodos();

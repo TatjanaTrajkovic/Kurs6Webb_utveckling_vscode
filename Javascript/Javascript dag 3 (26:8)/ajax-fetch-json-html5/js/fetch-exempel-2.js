@@ -8,7 +8,6 @@ function append(parent, el) {
 
 const ul = document.querySelector('#todos');
 const url = 'data/data.json';
-
 fetch(url)
     .then((resp) => resp.json())
     .then(function(data) {
