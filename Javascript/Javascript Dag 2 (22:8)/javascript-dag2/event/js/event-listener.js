@@ -1,3 +1,4 @@
+
 const elUsername = document.querySelector('#username');  // Get username input
 
 function checkUsername() {                             // Declare function
