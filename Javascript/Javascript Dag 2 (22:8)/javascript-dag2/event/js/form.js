@@ -1,3 +1,4 @@
+
 const elForm = document.querySelector('#formSignup');          // Store elements
 const elSelectPackage = document.querySelector('#package');
 const elPackageHint = document.querySelector('#packageHint');

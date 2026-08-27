@@ -9,7 +9,6 @@
 
 */ 
 
-
 const elForm = document.querySelector('#formNewName');
 const elName = document.querySelector('#txtName');
 const elFormOutput = document.querySelector('#formOutput');
