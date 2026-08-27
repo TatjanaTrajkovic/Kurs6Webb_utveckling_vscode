@@ -16,8 +16,6 @@ const elFormOutput = document.querySelector('#formOutput');
 const elBtnShowNames = document.querySelector('#btnShowNames');
 const elNamesOutput = document.querySelector('#namesOutput');
 
-
-
 let names = [];
 
 // Funktion för att lägga till ett nytt namn
