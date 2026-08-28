@@ -1,3 +1,4 @@
+
 {
   "todos": [
     {
@@ -9,6 +10,11 @@
       "todoTitle": "Rätta prov",
       "todoContent": "Java Webbprogrammering",
       "todoDate": "2022-08-05"
+    },
+    {
+      "todoTitle": "Öva sitar",
+      "todoContent": "Öva skalor",
+      "todoDate": "2026-08-05"
     }
   ]
-  }
+}

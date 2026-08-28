@@ -16,7 +16,7 @@ async function getTodos() {
       throw new Error(`Response status: ${response.status}`);
     }
 
-    const result = await response.json();
+    const result = await response.json(); //den här await presenterar den andra .then från exempel 2
     console.log(result.todos);
 
     let todo = result.todos;
