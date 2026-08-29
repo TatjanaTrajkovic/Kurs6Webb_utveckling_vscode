@@ -1,24 +1,29 @@
 const elUserList = document.querySelector('#usersList');
 
-const obj = [{
+const obj = [ //array med flera objekt i
+  {
   name: 'Jerry',
-  city: 'Göteborg'},
-{
-  name: 'Pelle',
-  city: 'Halmstad'
-}];
+  city: 'Göteborg',
+  favoriteAlbum: 'Jazz på Svenska'
+  },
+  {
+    name: 'Pelle',
+    city: 'Halmstad',
+    favoriteAlbum: 'Revolver'
+  }
+];
 
-const stringifiedObj = JSON.stringify(obj)
+const stringifiedObj = JSON.stringify(obj);
 
 // Spara
 localStorage.setItem(
-  "usersInfo",
+  'users',
   stringifiedObj
 )
 
 // Hämta
 const getUsersInfo =
-  localStorage.getItem('usersInfo');
+  localStorage.getItem('users');
 
 const usersInfoParsed = JSON.parse(getUsersInfo);
 
@@ -27,7 +32,7 @@ console.log(usersInfoParsed);
 
 usersInfoParsed.forEach(user => {
       let li = document.createElement("li");
-      li.textContent =  `${user.name} : ${user.city}`
+      li.textContent =  `${user.name} : ${user.city} - ${user.favoriteAlbum}`;
       elUserList.appendChild(li);
 });
 // Arrow syntax i Javascript
