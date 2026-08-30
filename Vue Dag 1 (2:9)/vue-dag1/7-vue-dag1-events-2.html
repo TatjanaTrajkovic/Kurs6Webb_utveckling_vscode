@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue - Events</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div id="app">
+    <button @click="greet">Greet</button>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+const { createApp } = Vue
+
+createApp({
+    data() {
+        return {
+            name: 'Vue.js'
+        }
+    },
+    methods: {
+        greet(event) {
+            // `this` inside methods points to the Vue instance
+            alert(`Hello ${this.name}!`)
+            // `event` is the native DOM event
+            if (event) {
+                alert(event.target.tagName)
+            }
+        }
+    }
+}).mount('#app')
+
+</script>
+</body>
+</html>

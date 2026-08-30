@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue - Introduktion</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div id="app">
+    <h1>Välkommen!</h1>
+    <p v-if="isShowGreeting">{{greeting}}</p>
+    <button @click="showGreeting">Visa en hälsning</button>
+
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+const { createApp } = Vue
+
+createApp({
+    data() {
+        return {
+            greeting: 'Hej!',
+            isShowGreeting: false
+        }
+    },
+    methods: {
+        showGreeting(){
+            this.isShowGreeting = true
+        }
+    }
+}).mount('#app')
+</script>
+</body>
+</html>

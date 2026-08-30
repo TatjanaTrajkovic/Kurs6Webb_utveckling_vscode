@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue - Events</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div id="app">
+    <!-- v-on kan förkortas till @ t ex @click="count++" -->
+    <button v-on:click="count++">Öka med 1</button>
+    <p>Du har klickat på knappen {{ count }} gånger.</p>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+const { createApp } = Vue
+
+createApp({
+    data() {
+        return {
+            count: 0
+        }
+    }
+}).mount('#app')
+
+</script>
+</body>
+</html>

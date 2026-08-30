@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue - Introduktion</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div id="app">
+<ul>
+    <li v-for="todo in todos" :key="todo.id">
+        {{todo.id}} {{todo.title}}
+    </li>
+</ul>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+const { createApp } = Vue
+
+  createApp({
+    data() {
+        return {
+            todos: [
+                {
+                    id: 1,
+                    title: 'Handla'
+                },
+                {
+                    id: 2,
+                    title: 'Städa'
+                },
+                {
+                    id: 3,
+                    title: 'Diska'
+                }
+            ]
+        }
+    }
+}).mount('#app')
+</script>
+</body>
+</html>

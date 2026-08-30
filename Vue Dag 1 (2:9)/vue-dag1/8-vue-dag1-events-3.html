@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue - Events</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div id="app">
+    <p>{{ message }}</p>
+    <label>Skriv ditt namn</label>
+    <input v-model="yourName">
+    <button @click="showMessage">Visa en hälsning!</button>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+const { createApp } = Vue
+
+createApp({
+    data() {
+        return {
+            message: 'Välkommen!',
+            yourName: ''
+        }
+    },
+    methods: {
+        showMessage() {
+            this.message = 'Hej ' + this.yourName + '!'
+        }
+    }
+}).mount('#app')
+
+</script>
+</body>
+</html>

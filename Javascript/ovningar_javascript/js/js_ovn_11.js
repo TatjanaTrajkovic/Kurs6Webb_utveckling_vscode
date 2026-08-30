@@ -26,6 +26,5 @@ function visaKommentar(event){
             '<h3>' + namn + '</h3>' + 
             '<p>' + kommentar + '</p<';
     }
-
 }
 
