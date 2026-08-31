@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue - Introduktion</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div id="app">
+    <click-counter></click-counter>
+    <click-counter></click-counter>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script>
+const { createApp } = Vue
+
+  createApp({
+
+})
+.component('click-counter', {
+    template: `<button @click="counter()">{{count}}</button>`,
+    data(){
+        return {
+            count: 0
+        }
+    },
+    methods: {
+        counter() {
+            this.count++
+        }
+    }
+})
+.mount('#app')
+
+</script>
+</body>
+</html>

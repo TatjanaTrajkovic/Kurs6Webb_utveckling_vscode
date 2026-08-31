@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue - Props</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div id="app">
+    <blog-post title="My journey with Vue"></blog-post>
+    <blog-post title="Blogging with Vue"></blog-post>
+    <blog-post title="Why Vue is so fun"></blog-post>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+const { createApp } = Vue
+
+  createApp({
+
+})
+.component('blog-post', {
+    template: `<h3>{{ title }}</h3>`,
+    props: ['title']
+})
+.mount('#app')
+</script>
+</body>
+</html>
