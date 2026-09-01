@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue - Lists</title>
+</head>
+<body>
+<div id="app">
+<ul>
+    <li v-for="grocery in groceries">{{grocery}}</li>
+</ul>
+
+<input id="input" type="text" v-model="newGrocery">
+
+<button v-if="newGrocery.length > 0" @click="addGrocery">Lägg till en vara</button>
+
+<p><button @click="randomGrocery">Slumpa fram en vara</button></p>
+<p>{{message}}</p>
+
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+const { createApp } = Vue
+
+  createApp({
+    data() {
+        return {
+            newGrocery: '',
+            groceries: ['Mjölk', 'Bröd', 'Kaffe'],
+            message: ''
+        }
+    },
+    methods: {
+        addGrocery(){
+            this.groceries.push(this.newGrocery)
+            this.newGrocery = ''
+        },
+        randomGrocery(){
+            let randGrocery = Math.floor(Math.random()*this.groceries.length)
+            this.message = this.groceries[randGrocery]
+        }
+    }
+}).mount('#app')
+
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue - Introduktion</title>
+</head>
+<body>
+<div id="app">
+    <p>Ditt nummer: {{ yourNumber }}</p>
+    <p>{{ message }}</p>
+    <input v-model="yourNumber">
+    <button v-on:click="guessNumber">Gissa ett nummer</button>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+/*
+Användaren ska gissa ett nummer mellan 1 och 10
+Datorn slumpar fram ett nummer som användarens gissning jämförs med
+Om numret är för lågt får man ett meddelande "Ditt nummer är för lågt!"!"
+Om numret är för högt får man ett meddelande "Ditt nummer är för högt!"
+Gissar man rätt får man meddelandet "Du har gissat rätt!"
+
+Vi ska använda slump med Math.random
+Vi ska visa numret användaren har gissat
+Vi ska visa meddelande beroende på "resultatet" på gissningen
+Gissar man rätt måste det skapas ett nytt slumptal
+ */
+const { createApp } = Vue
+
+createApp({
+    data() {
+        return {
+            message: 'Gissa ett nummer:',
+            yourNumber: '',
+            randTodo: Math.floor(Math.random()*10+1)
+        }
+    },
+    methods:{
+        guessNumber: function(){
+            console.log('Rätt nummer: ' + this.randTodo);
+            if(this.yourNumber < this.randTodo){
+                this.message = 'Ditt nummer är för lågt!';
+            }
+            else if(this.yourNumber > this.randTodo){
+                this.message = 'Ditt nummer är för högt!';
+            }
+            else{
+                this.message = 'Du har gissat rätt!';
+                this.yourNumber = '';
+                this.randTodo = Math.floor(Math.random()*10+1);
+            }
+        }
+    }
+}).mount('#app')
+
+</script>
+</body>
+</html>
