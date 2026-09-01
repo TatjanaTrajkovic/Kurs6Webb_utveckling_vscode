@@ -5,43 +5,45 @@
     <title>Vue - Introduktion</title>
 </head>
 <body>
-<div id="app">
-<p>{{ message }}</p>
-<button v-on:click="dateMessage">Visa en hälsning!</button>
+    <div id="app">
+        <p>{{ message }}</p>
+        <button v-on:click="dateMessage">Visa en hälsning!</button>
 
-</div>
+    </div>
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script>
-const { createApp } = Vue
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-createApp({
-    data() {
-        return {
-            message: 'Hej!'
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data() {
+                return {
+                    message: 'Hej!'
+                }
+            },
+            methods: {
+            dateMessage() {
+                let today = new Date()
+                let hourNow = today.getHours()
+                let greeting = ''
+
+                if (hourNow > 18) {
+                    greeting = 'God kväll!'
+                } else if (hourNow > 12) {
+                    greeting = 'God eftermiddag!'
+                } else if (hourNow > 0) {
+                    greeting = 'God morgon!'
+                } else {
+                    greeting = 'Välkommen!'
+                }
+
+                this.message = greeting
+            }
         }
-    },
-    methods: {
-    dateMessage() {
-        let today = new Date()
-        let hourNow = today.getHours()
-        let greeting = ''
+        }).mount('#app')
 
-        if (hourNow > 18) {
-            greeting = 'God kväll!'
-        } else if (hourNow > 12) {
-            greeting = 'God eftermiddag!'
-        } else if (hourNow > 0) {
-            greeting = 'God morgon!'
-        } else {
-            greeting = 'Välkommen!'
-        }
+    </script>
 
-        this.message = greeting
-    }
-}
-}).mount('#app')
-
-</script>
 </body>
 </html>
