@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue - Introduktion</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div id="app">
+<article>
+<ul>
+    <li v-for="todo in todos">
+        {{todo}}
+    </li>
+</ul>
+
+<input id="input" type="text" v-model="newTodo">
+
+<button v-if="newTodo.length > 0" @click="addTodo">Lägg till</button>
+</article>
+
+<article>
+<ul>
+    <li v-for="album in albums">{{ album }}</li>
+</ul>
+
+<input type="text" v-model="newAlbum">
+<button v-on:click="addAlbum">Favoritskiva</button>
+</article>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+const { createApp } = Vue
+
+  createApp({
+    data() {
+        return {
+            newTodo: '',
+            todos: ['Handla', 'Städa', 'Diska'],
+            newAlbum: '',
+            albums: []
+        }
+    },
+    methods: {
+        addTodo(){
+            this.todos.push(this.newTodo)
+        },
+        addAlbum(){
+            this.albums.push(this.newAlbum)
+        }
+    }
+}).mount('#app')
+</script>
+</body>
+</html>

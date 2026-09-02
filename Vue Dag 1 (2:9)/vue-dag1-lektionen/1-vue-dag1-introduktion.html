@@ -6,22 +6,27 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+    
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
 <div id="app">
-<h1>{{header}}</h1>
-<input v-model="header">
+  <h1>{{ header }}</h1>
+  <p>{{ message }}</p>
 </div>
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script>
   const { createApp } = Vue
 
   createApp({
     data() {
-        return {
-            header: 'Min första Vue app',
-        }
+      return {
+        header: 'First Vue App',
+        message: 'Hello Goodbye!'
+      }
     }
-}).mount('#app')
+  }).mount('#app')
 </script>
 </body>
 </html>
+
+

@@ -9,7 +9,7 @@
 <div id="app">
 <ul>
     <li v-for="todo in todos" :key="todo.id">
-        {{todo.id}} {{todo.title}}
+        {{todo.id}} {{todo.title}} {{todo.date}}
     </li>
 </ul>
 </div>
@@ -24,15 +24,23 @@ const { createApp } = Vue
             todos: [
                 {
                     id: 1,
-                    title: 'Handla'
+                    title: 'Handla',
+                    date: '2026-09-02'
                 },
                 {
                     id: 2,
-                    title: 'Städa'
+                    title: 'Städa',
+                    date: '2026-09-10'
                 },
                 {
                     id: 3,
-                    title: 'Diska'
+                    title: 'Diska',
+                    date: '2026-09-02'
+                },
+                {
+                    id: 4,
+                    title: 'Programmera',
+                    date: '2026-09-05'
                 }
             ]
         }

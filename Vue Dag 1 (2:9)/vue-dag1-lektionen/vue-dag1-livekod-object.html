@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livekod</title>
+</head>
+<body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+<h1>{{ header }}</h1>
+<ul>
+    <li v-for="movie in movies">{{ movie.title }} {{ movie.year }}</li>
+</ul>
+<h2>Lägg till en film</h2>
+<p>{{ newMovie }}</p>
+<input v-model="newMovieTitle">
+<input v-model="newMovieYear">
+<button v-on:click="addMovie">Lägg till en film</button>
+</div>
+
+<script>
+  const { createApp } = Vue
+
+  createApp({
+    data() {
+      return {
+        header: 'Mina favoritfilmer',
+        newMovieTitle: '',
+        newMovieYear: '',
+        movies: [
+           {
+            title: 'Blade Runner',
+            year: '1977'
+           },
+           {
+            title: 'E.T',
+            year: '1982'
+           }
+        ]
+      }
+    },
+    methods: {
+        addMovie(){
+            //this.movies.push(this.newMovie)
+            this.movies.push(
+                {
+                    title: this.newMovieTitle,
+                    year: this.newMovieYear
+                }
+            )
+        }
+    }
+  }).mount('#app')
+</script>
+</body>
+</html>
