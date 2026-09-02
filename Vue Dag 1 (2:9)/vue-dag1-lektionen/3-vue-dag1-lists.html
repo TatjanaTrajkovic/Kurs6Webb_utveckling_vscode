@@ -6,32 +6,36 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<div id="app">
-    <h1>{{ greeting }}</h1>
-    <ul>
-        <li v-for="todo in todos">
-            {{todo}}
-        </li>
-    </ul>
 
-    <ul>
-        <li v-for="album in albums">{{ album }}</li>
-    </ul>
-</div>
+    <div id="app">
+        <h1>{{ greeting }}</h1>
+        <ul>
+            <li v-for="todo in todos">
+                {{ todo }}
+            </li>
+        </ul>
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script>
-const { createApp } = Vue
+        <ul>
+            <li v-for="album in albums">{{ album }}</li>
+        </ul>
+    </div>
 
-  createApp({
-    data() {
-        return {
-            greeting: 'Hej',
-            todos: ['Handla', 'Städa', 'Diska', 'Programmera'],
-            albums: ['Jazz på Svenska', 'Meddle']
-        }
-    }
-}).mount('#app')
-</script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data(){
+                return{
+                    greeting: 'Hej',
+                    todos: ['Handla', 'Städa', 'Diska', 'Programmera'],
+                    albums: ['Jazz på Svenska', 'Meddle']
+                }
+            }
+        }).mount('#app')
+
+    </script>
+
 </body>
 </html>
