@@ -6,31 +6,32 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<div id="app">
-    <p>{{ message }}</p>
-    <label>Skriv ditt namn</label>
-    <input v-model="yourName">
-    <button click="showMessage">Visa en hälsning!</button>
-</div>
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script>
-const { createApp } = Vue
+    <div id="app">
+        <p>{{ message }}</p>
+        <label>Skriv ditt namn</label>
+        <input v-model="yourName">
+        <button @click="showMessage">Visa en hälsning!</button>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue
 
-createApp({
-    data() {
-        return {
-            message: 'Välkommen!',
-            yourName: ''
-        }
-    },
-    methods: {
-        showMessage() {
-            this.message = 'Hej ' + this.yourName + '!'
-        }
-    }
-}).mount('#app')
+        createApp({
+            data(){
+                return{
+                    message: 'Välkommen!',
+                    yourName: ''
+                }
+            },
+            methods: {
+                showMessage(){
+                    this.message = 'Hej ' + this.yourName + '!'
+                }
+            }
+        }).mount('#app')
 
-</script>
+    </script>
+
 </body>
 </html>
