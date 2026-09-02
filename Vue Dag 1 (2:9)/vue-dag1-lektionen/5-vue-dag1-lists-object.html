@@ -6,46 +6,51 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<div id="app">
-<ul>
-    <li v-for="todo in todos" :key="todo.id">
-        {{todo.id}} {{todo.title}} {{todo.date}}
-    </li>
-</ul>
-</div>
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script>
-const { createApp } = Vue
+    <div id="app">
+        <ul>
+            <li v-for="todo in todos" :key="todo.id">
+                {{ todo.id }} {{ todo.title }} {{ todo.date }}
+            </li>
+        </ul>
+    </div>
 
-  createApp({
-    data() {
-        return {
-            todos: [
-                {
-                    id: 1,
-                    title: 'Handla',
-                    date: '2026-09-02'
-                },
-                {
-                    id: 2,
-                    title: 'Städa',
-                    date: '2026-09-10'
-                },
-                {
-                    id: 3,
-                    title: 'Diska',
-                    date: '2026-09-02'
-                },
-                {
-                    id: 4,
-                    title: 'Programmera',
-                    date: '2026-09-05'
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data(){
+                return{
+                    todos: [
+                        {
+                            id: 1,
+                            title: 'Handla',
+                            date: '2026-09-03'
+                        },
+                        {
+                            id: 2,
+                            title: 'Städa',
+                            date: '2026-09-03'
+                        },
+                        {
+                            id: 3,
+                            title: 'Diska',
+                            date: ' 2026-09-04'
+                        },
+                        {
+                            id: 4,
+                            title: 'Programmera',
+                            date: '2026-09-03'
+                        }
+
+                    ]
                 }
-            ]
-        }
-    }
-}).mount('#app')
+            }
+        }).mount('#app')
+    </script>
+
 </script>
 </body>
 </html>
