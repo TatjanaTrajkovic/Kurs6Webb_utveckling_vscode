@@ -6,23 +6,24 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<div id="app">
-    <button @click="say('hello')">Say hello</button>
-    <button @click="say('bye')">Say bye</button>
-</div>
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script>
-const { createApp } = Vue
+    <div id="app">
+        <button @click="say('hello')">Say hello</button>
+        <button @click="say('bye')">Say bye</button>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-createApp({
-    methods: {
-        say(message) {
-            alert(message)
-        }
-    }
-}).mount('#app')
+    <script>
+        const { createApp } = Vue
 
-</script>
+        createApp({
+            methods: {
+                say(message){
+                    alert(message)
+                }
+            }
+        }).mount('#app')
+    </script>
+
 </body>
 </html>
