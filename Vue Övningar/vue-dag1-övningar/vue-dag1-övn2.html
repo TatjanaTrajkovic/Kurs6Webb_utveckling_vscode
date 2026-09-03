@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <h1>{{ header }}</h1>
+        <p>{{ message }}</p>
+        <input v-model="message" type="text">
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data(){
+                return{
+                    header: 'Välkommen!',
+                    message: 'Min Vue övning 2'
+                }
+            },
+        
+        }).mount('#app')
+
+    </script>
+
+
+
+</body>
+</html>
+
+<!-- Övning 2
+Utveckla övning 1 genom att låta användaren ändra texten i ett input-fält.
+Se 2-vue-dag1-introduktion-vmodel.html -->
