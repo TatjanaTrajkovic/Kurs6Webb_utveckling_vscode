@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <div id="app">
+        <h1>Gissa numret</h1>
+        <p>Gissa ett nummer mellan 1 och 10.</p>
+        
+        <div v-if="!isFinishedGame">
+            <input type="number" v-model="guess" min="1" max="10">
+            <button @click="checkGuess">Gissa</button>
+        </div>
+
+        <p>{{ message }}</p>
+        <button v-if="isFinishedGame"  @click="newGame">Nytt spel</button>
+
+    </div>
+    <script>
+        const {createApp} = Vue
+        createApp({
+            data(){
+                return{
+                    message: '',
+                    randomNumber: Math.floor(Math.random() * 10) + 1,
+                    guess: '',
+                    isFinishedGame:false
+                }
+            },
+            methods: {
+                checkGuess(){
+                    if(this.guess < this.randomNumber){
+                        this.message = 'Ditt nummer är för lågt!'
+                    }else if(this.guess > this.randomNumber){
+                        this.message = 'Ditt numme är för högt!'
+                    }else{
+                        this.message = 'Du har gissat rätt!'
+                        this.isFinishedGame = true
+                    }
+                },
+                newGame(){
+                    this.randomNumber = Math.floor(Math.random() * 10 ) + 1 //den här ställer om till ett nytt slump nummer
+                    this.guess = '',
+                    this.message = '',
+                    this.isFinishedGame = false
+                }
+            }
+        }).mount('#app')
+    </script>
+    
+</body>
+</html>
+
+<!-- Övning 10 – Fortsättning på Gissaspelet (med Directives v-if)
+Lite svårare!
+Nu ska vi bygga ut Gissaspelet (övning 9) så att det finns en knapp för att göra ett nytt spel
+när en omgång är klar dvs när man har gissat rätt.
+När man har gissat rätt ska formuläret för att gissa dvs ett textfält och en knapp döljas och
+bara knappen för nytt spel visas.
+När man trycker på knappen för ett nytt spel visas formuläret igen och knappen för nytt spel
+döljs igen.
+Ett tips är att ha en variabel som ändras beroende på om ett spel/omgång är avslutat eller
+inte t ex isFinishedGame som sedan används med v-if i html-koden och på sätt bestämmer
+vad som ska visas eller inte.
+Se 10-vue-dag1-directive-vif-html för en ledtråd.
+Lösningsförslag finns i vue-ovningar-kodexempel.zip vue-dag2-ovn10-kodexempel.html -->

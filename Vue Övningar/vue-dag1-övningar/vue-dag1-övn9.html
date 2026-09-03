@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Gissa numret</h1>
+        <p>Gissa ett nummer mellan 1 och 10.</p>
+        
+        <input type="number" v-model="guess" min="1" max="10">
+
+        <button @click="checkGuess">Gissa</button>
+        <p>Du gissade: {{ message }}</p>
+        
+
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const {createApp} = Vue
+
+        createApp({
+            data(){
+                return{
+                    message: '',
+                    randomNumber: Math.floor(Math.random() * 10) + 1,
+                    guess: ''
+                }
+            },
+            methods: {
+                checkGuess(){
+                    if(this.guess < this.randomNumber){
+                        this.message = 'Ditt nummer är för lågt!'
+                    }else if(this.guess > this.randomNumber){
+                        this.message = 'Ditt nummer är för högt!'
+                    }else{
+                        this.message = 'Du har gissat rätt'
+                        this.randomNumber = 
+                            Math.floor(Math.random() * 10) + 1 // här skapas en ny random nr
+                    }
+                }
+            }
+        }).mount('#app')
+    </script>
+
+
+
+</body>
+</html>
+
+<!-- Övning 9
+Gör gärna den här övningen tillsammans med någon.
+Gör ett enkelt Gissa-spel där användaren får gissa ett nummer mellan 1 och 10. Du slumpar
+fram ett nummer mellan 1 och 10 och ger användaren ledtrådar om hen gissat för lågt eller
+högt.
+Se 8-vue-dag1-events-3.html för att se hur man använder inmatning och en metod.
+Tips på vägen: Du behöver tre variabler: meddelande, slumptal, användarens gissning som
+behöver ligga i/deklareras i data-blocket. Själva koden för gissningen lägger du i en metod.
+Och på samma sätt som i övning 3 och 4 skriver du Javascript-kod som vanligt för att lösa
+själva koden för spelet.
+Nedan är ett förslag på pseudokod.
+Lösningsförslag finns i vue-ovningar-kodexempel.zip vue-dag1-ovn9-kodexempel.html
+
+Användaren ska gissa ett nummer mellan 1 och 10
+Datorn slumpar fram ett nummer som användarens gissning jämförs med
+Om numret är för lågt får man ett meddelande "Ditt nummer är för lågt!!
+Om numret är för högt får man ett meddelande "Ditt nummer är för högt!"
+Gissar man rätt får man meddelandet "Du har gissat rätt!"
+Vi ska använda slump med Math.random
+Vi ska visa numret användaren har gissat
+Vi ska visa meddelande beroende på "resultatet" på gissningen
+Gissar man rätt måste det skapas ett nytt slumptal -->
