@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app">
+        <h1>{{ header }}</h1>
+        <p :class="{ highlight: isHighlighted }">Jag lär mig Class Binding i Vue!</p>
+        <button @click="changeStyle">Ändra formatering</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data(){
+                return{
+                    header: 'Bindings och Directives',
+                    isHighlighted: false
+                }
+            },
+            methods: {
+                changeStyle(){
+                    this.isHighlighted = true
+                    //this.isHighlighted = !this.isHighlighted
+                }
+            }
+        }).mount('#app')
+    </script>
+
+
+</body>
+</html>
+
+<!-- Övning 8 – Bindings och directives
+Nu ska vi göra en sida där man kan använda Class Bindings som i övning 7 men nu ska vi låta
+användaren påverka ett html-elements formatering.
+Se 12-vue-dag1-bindings-class-2.html för exempel.
+Du kan utgå från koden i övning 7.
+Lägg till så att det finns en knapp, trycker man på den ändras formateringen på ett html-
+element t ex en p-tagg. -->
