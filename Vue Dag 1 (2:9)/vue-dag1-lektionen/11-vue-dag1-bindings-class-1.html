@@ -6,23 +6,26 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<div id="app">
-    <h1>{{header}}</h1>
-    <p :class="{critical: isCritical}">Hej</p>
-</div>
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script>
-const { createApp } = Vue
+    <div id="app">
+        <h1>{{ header }}</h1>
+        <p :class="{critical: isCritical}">Hej</p>
+    </div>
 
-createApp({
-    data() {
-        return {
-            header: 'Vue - Exempel med class-binding',
-            isCritical: true
-        }
-    }
-}).mount('#app')
-</script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data(){
+                return {
+                    header: 'Vue- Exempel med class-binding',
+                    isCritical: true
+                }
+            }
+        }).mount('#app')
+    </script>
+
 </body>
 </html>
