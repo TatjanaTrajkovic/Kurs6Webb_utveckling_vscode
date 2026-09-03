@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <h1>{{ header }}</h1>
+        <ul>
+            <li v-for="item in items">
+                {{ item }}
+            </li>
+        </ul>
+        <input type="text" v-model="newItem">
+        <button @click="addItem">Lägg till vara</button>
+        <p><button @click="getRandomItem">Slumpa en vara</button></p>
+        <p>Slumpad vara är: {{ randomItem }}</p>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data(){
+                return{
+                    header: 'Min inköpslista',
+                    items: ['Mjölk', 'Bröd', 'Ägg'],
+                    newItem: '',
+                    randomItem: ''
+                }
+            }, 
+            methods: {
+                addItem(){
+                    this.items.push(this.newItem),
+                    this.newItem = ''
+                },
+                getRandomItem(){
+                    let randomIndex = Math.floor(
+                        Math.random() * this.items.length)
+                    this.randomItem = this.items[randomIndex]
+                }
+            }
+        }).mount('#app')
+
+    </script>
+
+
+
+</body>
+</html>
+
+<!-- Övning 6 - Fortsättning Handlingslista
+Bygg ut programmet i övning 5 så att man kan slumpa fram en vara ur listan genom att
+användaren trycker på en knapp med v:on-click (@click).
+Använd math.random i Javascript för slump:
+let randTodo = Math.floor(Math.random()*5);
+(let randTodo = Math.floor(Math.random()*this.todos.length());)
+Se vue-dag1-ovn6-kodexempel.html i vue-ovningar-kodexempel.zip för lösningsförslag. -->
