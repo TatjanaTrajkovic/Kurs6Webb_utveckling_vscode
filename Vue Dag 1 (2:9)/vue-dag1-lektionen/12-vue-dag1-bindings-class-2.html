@@ -6,29 +6,34 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<div id="app">
-    <h1>{{header}}</h1>
-    <p :class="{critical: isCritical}">Hej</p>
-    <button @click="updateCritical">Formatera texten</button>
-</div>
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script>
-const { createApp } = Vue
+    <div id="app">
+        <h1>{{ header }}</h1>
+        <p :class="{critical: isCritical}">Hej</p>
+        <button @click="updateCritical">Formatera texten</button>
+    </div>
 
-createApp({
-    data() {
-        return {
-            header: 'Vue - Exempel med class-binding',
-            isCritical: false
-        }
-    },
-    methods: {
-        updateCritical(){
-            this.isCritical = true
-        }
-    }
-}).mount('#app')
-</script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data(){
+                return{
+                    header: 'Vue - exempel med class binding',
+                    isCritical: false
+                }
+            },
+            methods: {
+                updateCritical(){
+                    this.isCritical = true
+                }
+            }
+
+        }).mount('#app')
+
+
+    </script>
+   
 </body>
 </html>
