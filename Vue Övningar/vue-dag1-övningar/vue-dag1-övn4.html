@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1>{{ header }}</h1>
+        <label>Skriv temperatur i C för konvertering till F:</label>
+        <input type="number" v-model="celsius">
+        <button @click="celsiusToFahrenheit">Omvandla till Fahrenheit</button>
+        <p>Det är {{ fahrenheit }}</p>
+    </div>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data(){
+                return{
+                    header: 'Konvertering från Celsius till Fahrenheit',
+                    celsius: '',
+                    fahrenheit: '' 
+                }
+            },
+            methods: {
+                celsiusToFahrenheit(){
+                    this.fahrenheit = this.celsius * 9 / 5 + 32
+                }
+            }
+        }).mount('#app')
+
+    </script>
+
+</body>
+</html>
+
+<!-- Övning 4 – Konvertera Celisus till Fahrenheit
+Man ska kunna konvertera Celsius till Fahrenheit.
+fahrenheit = celsius * 9 / 5 + 32;
+Se 8-vue-dag1-events-3.html för att se hur man använder inmatning och en metod. Lägg
+koden för att göra temperatur-omvandlingen i en metod (på liknande sätt som exemplet). -->
