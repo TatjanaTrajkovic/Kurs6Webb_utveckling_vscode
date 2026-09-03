@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1>{{ header }}</h1>
+        <ul>
+            <li v-for="item in items">
+                {{ item }}
+            </li>
+        </ul>
+        <input type="text" id="input" v-model="newItem">
+        <button @click="addItem">Lägg till</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data(){
+                return{
+                    header: 'Min inköpslista',
+                    items: ['Mjölk', 'Bröd', 'Ägg'],
+                    newItem: ''
+                }
+            },
+            methods: {
+                addItem(){
+                    this.items.push(this.newItem)
+                    this.newItem = ''
+                }
+            }
+        }).mount('#app')
+    </script>
+
+</body>
+</html>
+
+<!-- Övning 5 - Handlingslista
+Gör ett enkelt program som har en array med t ex inköpslista. Man ska kunna visa listan och
+användaren ska även kunna lägga till en ny vara som ska sparas i arrayen och visas i listan.
+Utgå från 4-vue-dag1-lists-add.html (Här är det en att-göra-lista) -->
