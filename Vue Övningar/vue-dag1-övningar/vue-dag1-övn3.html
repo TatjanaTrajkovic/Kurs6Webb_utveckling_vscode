@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <button @click="showGreeting">Visa hälsning</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const { createApp} = Vue
+
+        createApp({
+            data(){
+                return{
+                    message: ''
+                }
+            },
+            methods: {
+                showGreeting(){
+                    
+                    let date = new Date()
+                    let hour = date.getHours()
+
+                    if(hour < 10){
+                        this.message = 'God morgon'
+                    }else if(hour < 12){
+                        this.message = 'God förmiddag'
+                    }else if(hour < 18){
+                        this.message = 'God eftermiddag'
+                    }else{
+                        this.message = 'God kväll'
+                    }
+                    
+
+                }
+            }
+
+        }).mount('#app')
+
+    </script>
+
+</body>
+</html>
+
+<!-- Övning 3
+Skriv en hälsning till användaren beroende på vilken tid det är på dygnet. T ex. ”God
+förmiddag”, ”God middag”.
+Se 8-vue-dag1-events-3.html för att se hur man använder inmatning och en metod. Lägg
+koden för att skapa hälsningen i en metod (på liknande sätt som exemplet).
+I Vue skriver man Javascript som vanligt så det vi tidigare har lärt oss kan vi använda för att
+skriva koden för att göra hälsningen dvs deklarera variabler med let, if-satser mm.
+Tänk på: Man måste använda this i en metod för att ändra värdet på en variabel som är
+deklarerad i
+data() {
+return {
+message: 'Hello Vue',
+}
+}
+t ex i metoden: this.message = ’Ny text’
+Se vue-dag1-ovn3-kodexempel.html i vue-ovningar-kodexempel.zip för lösningsförslag. -->
