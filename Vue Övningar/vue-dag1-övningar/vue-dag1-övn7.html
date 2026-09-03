@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="app">
+        <h1>{{ header }}</h1>
+        <p :class="{ highlight: isHighlighted}">Jag lär mig Class Binding i Vue!</p>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data(){
+                return{
+                    header: 'Vue Class Binding',
+                    isHighlighted: true
+                }
+            }
+        }).mount('#app')
+    </script>
+
+
+
+
+</body>
+</html>
+
+<!-- Övning 7 - Bindings
+Gör en sida som har ett html-element t ex en p-tagg som du formaterar med Class Binding
+(:class) t ex ändra färg, font-storlek, bakgrundsfärg. Klassen som du använder måste finnas i
+css-filen.
+Se exempel 11-vue-dag1-bindings-class-1.html för exempel. (Här använder vi klassen critical) -->
