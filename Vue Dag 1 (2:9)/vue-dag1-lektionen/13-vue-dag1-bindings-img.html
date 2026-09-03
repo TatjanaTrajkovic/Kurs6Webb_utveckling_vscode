@@ -6,24 +6,24 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div id="app">
-    <h1>{{ product }}</h1>
-    <!-- :src förkortning på v-bind:src -->
-    <img :src="image" alt="">
-</div>
+    <div id="app">
+        <h1>{{ product }}</h1>
+        <img :src="image" alt="">
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const {createApp} = Vue
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script>
-const { createApp } = Vue
+        createApp({
+            data(){
+                return{
+                    product: 'Album',
+                    image: 'img/mountainflame-500px.jpg'
+                }
+            }
+        }).mount('#app')
+    </script>
 
-createApp({
-    data() {
-        return {
-            product: 'Album',
-            image: 'img/mountainflame-500px.jpg'
-        }
-    }
-}).mount('#app')
-</script>
+
 </body>
 </html>
