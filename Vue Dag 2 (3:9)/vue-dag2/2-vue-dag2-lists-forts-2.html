@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+
     <div id="app">
         <form v-on:submit.prevent="addTodo">
             <label>Lägg till i listan</label>
@@ -16,40 +17,38 @@
 
         <ul>
             <li v-for="(todo, index) in todos" :key="todo.id" :class="{prio: todo.prio}">
-                {{todo.id}} {{todo.title}} {{todo.date}}
+                {{ todo.id }} {{ todo.title }} {{ todo.date }}
                 <button @click="deleteTodo(index)">Ta bort</button>
                 <button @click="changePrio(todo)">Ändra prio</button>
             </li>
         </ul>
-    </div>
 
+    </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
     <script>
         const { createApp } = Vue
 
         createApp({
-            data() {
-                return {
+            data(){
+                return{
                     newTodo: '',
                     newTodoDate: '',
                     todos: [
                         {
                             id: 1,
                             title: 'Handla',
-                            date: '2025-09-25',
-                            prio: false
+                            date: '2026-09-04'
                         },
                         {
                             id: 2,
                             title: 'Städa',
-                            date: '2025-09-27',
-                            prio: false
+                            date: '2026-09-05'
                         },
                         {
                             id: 3,
                             title: 'Diska',
-                            date: '2025-09-28',
-                            prio: false
+                            date: '2026-09-05'
                         }
                     ],
                     nextTodoId: 4
@@ -73,7 +72,7 @@
                 }
             }
         }).mount('#app')
-        
     </script>
+
 </body>
 </html>
