@@ -7,24 +7,26 @@
 </head>
 <body>
     <div id="app">
+
         <ul>
             <li v-for="todo in todos" :key="todo.id">
-                {{todo.id}} {{todo.title}}
+                {{ todo.id }} {{ todo.title }}
             </li>
         </ul>
 
-        <input id="input" type="text" v-model="newTodo">
-
+        <input type="text" id="input" v-model="newTodo">
         <button v-if="newTodo.length > 0" @click="addTodo">Lägg till</button>
+
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
     <script>
         const { createApp } = Vue
 
         createApp({
-            data() {
-                return {
+            data(){
+                return{
                     newTodo: '',
                     todos: [
                         {
@@ -40,16 +42,16 @@
                             title: 'Diska'
                         }
                     ]
-                }
+                }  
             },
             methods: {
-                addTodo(){
-                    this.todos.push({
-                        id: this.todos.length + 1,
-                        title: this.newTodo
-                    })
+                    addTodo(){
+                        this.todos.push({
+                            id: this.todos.length + 1,
+                            title: this.newTodo
+                        })
+                    }
                 }
-            }
         }).mount('#app')
     </script>
     
