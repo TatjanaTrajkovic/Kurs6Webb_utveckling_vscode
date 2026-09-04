@@ -6,73 +6,74 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<div id="app">
-<form v-on:submit.prevent="addTodo">
-    <label>Lägg till i listan</label>
-    <input type="text" placeholder="Vad ska du göra?" v-model="newTodo">
-    <input type="text" placeholder="Datum" v-model="newTodoDate">
-    <button v-if="newTodo.length > 0">Lägg till</button>
-</form>
+    <div id="app">
+        <form v-on:submit.prevent="addTodo">
+            <label>Lägg till i listan</label>
+            <input type="text" placeholder="Vad ska du göra?" v-model="newTodo">
+            <input type="text" placeholder="Datum" v-model="newTodoDate">
+            <button v-if="newTodo.length > 0">Lägg till</button>
+        </form>
 
-<ul>
-    <li v-for="(todo, index) in todos" :key="todo.id" :class="{prio: todo.prio}">
-        {{todo.id}} {{todo.title}} {{todo.date}}
-        <button @click="deleteTodo(index)">Ta bort</button>
-        <button @click="changePrio(todo)">Ändra prio</button>
-    </li>
-</ul>
-</div>
+        <ul>
+            <li v-for="(todo, index) in todos" :key="todo.id" :class="{prio: todo.prio}">
+                {{todo.id}} {{todo.title}} {{todo.date}}
+                <button @click="deleteTodo(index)">Ta bort</button>
+                <button @click="changePrio(todo)">Ändra prio</button>
+            </li>
+        </ul>
+    </div>
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script>
-const { createApp } = Vue
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue
 
-  createApp({
-    data() {
-        return {
-            newTodo: '',
-            newTodoDate: '',
-            todos: [
-                {
-                    id: 1,
-                    title: 'Handla',
-                    date: '2025-09-25',
-                    prio: false
-                },
-                {
-                    id: 2,
-                    title: 'Städa',
-                    date: '2025-09-27',
-                    prio: false
-                },
-                {
-                    id: 3,
-                    title: 'Diska',
-                    date: '2025-09-28',
-                    prio: false
+        createApp({
+            data() {
+                return {
+                    newTodo: '',
+                    newTodoDate: '',
+                    todos: [
+                        {
+                            id: 1,
+                            title: 'Handla',
+                            date: '2025-09-25',
+                            prio: false
+                        },
+                        {
+                            id: 2,
+                            title: 'Städa',
+                            date: '2025-09-27',
+                            prio: false
+                        },
+                        {
+                            id: 3,
+                            title: 'Diska',
+                            date: '2025-09-28',
+                            prio: false
+                        }
+                    ],
+                    nextTodoId: 4
                 }
-            ],
-            nextTodoId: 4
-        }
-    },
-    methods: {
-        addTodo(){
-            this.todos.push({
-                id: this.nextTodoId++,
-                title: this.newTodo,
-                date: this.newTodoDate
-            })
-            this.newTodo = '',
-            this.newTodoDate = ''
-        },
-        deleteTodo(id){
-            this.todos.splice(id, 1)
-        },
-        changePrio(id){
-            id.prio = true
-        }
-    }
-}).mount('#app')
-</script>
+            },
+            methods: {
+                addTodo(){
+                    this.todos.push({
+                        id: this.nextTodoId++,
+                        title: this.newTodo,
+                        date: this.newTodoDate
+                    })
+                    this.newTodo = '',
+                    this.newTodoDate = ''
+                },
+                deleteTodo(id){
+                    this.todos.splice(id, 1)
+                },
+                changePrio(id){
+                    id.prio = true
+                }
+            }
+        }).mount('#app')
+        
+    </script>
 </body>
 </html>

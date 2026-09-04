@@ -6,35 +6,35 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<div id="app">
-    <blog-post
-            v-for="post in posts"
-            v-bind:key="post.id"
-            v-bind:title="post.title"
-    ></blog-post>
-</div>
+    <div id="app">
+        <blog-post
+                v-for="post in posts"
+                v-bind:key="post.id"
+                v-bind:title="post.title"
+        ></blog-post>
+    </div>
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script>
-const { createApp } = Vue
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <script>
+        const { createApp } = Vue
 
-  createApp({
-    data() {
-        return {
-            posts: [
-                { id: 1, title: 'My journey with Vue' },
-                { id: 2, title: 'Blogging with Vue' },
-                { id: 3, title: 'Why Vue is so fun' }
-            ]
-        }
-    }
-})
-.component('blog-post', {
-    template: `<h3>{{ title }}</h3>`,
-    props: ['title']
-})
-.mount('#app')
+        createApp({
+            data() {
+                return {
+                    posts: [
+                        { id: 1, title: 'My journey with Vue' },
+                        { id: 2, title: 'Blogging with Vue' },
+                        { id: 3, title: 'Why Vue is so fun' }
+                    ]
+                }
+            }
+        })
+        .component('blog-post', {
+            template: `<h3>{{ title }}</h3>`,
+            props: ['title']
+        }).mount('#app')
 
-</script>
+    </script>
 </body>
 </html>
