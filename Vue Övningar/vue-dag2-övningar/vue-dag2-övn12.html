@@ -4,10 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
+    <div id="app">
+        <h1>Handlingslista</h1>
+        <ul>
+            <li v-for="item in items" :key="item.id" :class="{bought: item.bought}">
+                {{ item.id }} {{ item.title }} Antal: {{ item.amount }}
 
+                <button @click="deleteItem(item.id)">Radera</button>
+                <button @click="markBought(item)">Köpt</button>
+            </li>
+        </ul>
+        <input type="text" v-model="newItem" placeholder="Skriv en vara">
+        <input type="number" v-model="newAmount" min="1" placeholder="Skriv antal varor">
+        <button v-if="newItem.length > 0" @click="addItem">Lägg till</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data(){
+                return{
+                    newItem: '',
+
+                    items: [
+                        {
+                            id: 1,
+                            title: 'Mjölk',
+                            amount: 2,
+                            bought: false
+                        },
+                        {
+                            id: 2,
+                            title: 'Ägg',
+                            amount: 30,
+                            bought: false
+                        },
+                        {
+                            id: 3,
+                            title: 'Bröd',
+                            amount: 2,
+                            bought: false
+                        }
+                    ]
+                }
+            },
+            methods: {
+                addItem(){
+                    this.items.push({
+                        id: this.items.length + 1,
+                        // id: Math.max(...this.items.map(item => item.id)) + 1,
+                        title: this.newItem,
+                        amount: this.newAmount,
+                        bought: false
+                    })
+                    this.newItem = '',
+                    this.newAmount = 1
+                },
+                deleteItem(id){
+                    let index = this.items.findIndex(item => item.id === id)
+                    this.items.splice(index, 1)
+                    this.items.forEach((item, index) => {
+                        item.id = index + 1
+                    })
+                },
+                markBought(item){
+                    item.bought = true
+                }
+            }
+        }).mount('#app')
+    </script>
 
 </body>
 </html>
