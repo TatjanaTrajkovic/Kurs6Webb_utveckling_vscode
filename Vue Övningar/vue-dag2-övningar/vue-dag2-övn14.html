@@ -7,6 +7,45 @@
 </head>
 <body>
     
+    <div id="app">
+        <h2>Handlingslista</h2>
+        <ul>
+            <shopping-item 
+                v-for="item in shoppingList" 
+                :key="item.id" 
+                :product="item.product"></shopping-item>
+        </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data(){
+                return{
+                    shoppingList: [
+                        {
+                            id: 1,
+                            product: 'Mjölk'
+                        },
+                        {
+                            id: 2,
+                            product: 'Ägg'
+                        },
+                        {
+                            id: 3,
+                            product: 'Bröd'
+                        }
+                    ]
+                }
+            }
+        }).component('shopping-item', {
+            template: `<li>{{ product }}</li>`,
+            props: ['product']
+        }).mount('#app')
+    </script>
 
 
 </body>
