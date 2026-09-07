@@ -1,0 +1,15 @@
+Kommando att starta ny projekt mapp med Vue och Vite
+
+1. Skapa en mapp där alla dina projekt i vue vite ska ligga i 
+2. Högerklicka på mappen och välj Open in IntegratedTerminal
+3. Skapa ny projekt genom npm create vue@latest
+4. Y
+5. Project name: vue-vite-03092026
+6. No ingen typescript här
+7. Välj inga features I din projekt och därmed tryck endast Enter
+8. None, enter
+9. Blank vue project klicka enter dvs no
+10. cd .. vue-vite-03092026
+11. npm install
+12. npm run dev
+13. Här är adressen http://localhost:5173/
