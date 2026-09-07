@@ -22,9 +22,9 @@
         createApp({
 
         })
-        .component('blog-post', {
-            template: `<h3>{{ title }}</h3>`,
-            props: ['title']
+        .component('blog-post', { // component= vad ska jag återvända? o det är blog-post
+            template: `<h3>{{ title }}</h3>`,//template=hur ska komponenten visas?{{ title }} = här ska värdet från prop title skrivas ut
+            props: ['title'] //props= Vilken information ska jag skicka in i komponenten
         }).mount('#app')
 
     </script>
