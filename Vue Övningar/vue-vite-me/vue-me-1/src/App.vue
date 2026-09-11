@@ -1,9 +1,9 @@
 <script setup>
-
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import PriceTotal from './components/PriceTotal.vue'
 import Greeting from './components/Greeting.vue'
-
+import FavoriteAnimal from './components/FavoriteAnimal.vue'
 </script>
 
 <template>
@@ -12,13 +12,13 @@ import Greeting from './components/Greeting.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+      <FavoriteAnimal/>
     </div>
   </header>
 
   <main>
-    <Greeting />
+    <TheWelcome />
   </main>
-
 </template>
 
 <style scoped>
