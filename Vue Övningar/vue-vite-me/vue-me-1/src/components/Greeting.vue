@@ -17,6 +17,7 @@
 
 
 <template>
+    <h2>Välkommen till min Vue-sida!</h2>
 
     <form @submit.prevent="showGreeting">
         <input type="text" v-model="name">

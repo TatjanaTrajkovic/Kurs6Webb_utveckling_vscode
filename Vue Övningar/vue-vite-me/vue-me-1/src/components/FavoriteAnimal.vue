@@ -1,6 +1,6 @@
 
 <script setup>
-    import ref from 'vue'
+    import { ref } from 'vue'
 
     const animal = ref('')
     const message = ref('')

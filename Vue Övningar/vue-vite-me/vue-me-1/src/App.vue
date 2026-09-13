@@ -1,9 +1,12 @@
+
+
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-import PriceTotal from './components/PriceTotal.vue'
-import Greeting from './components/Greeting.vue'
-import FavoriteAnimal from './components/FavoriteAnimal.vue'
+  import HelloWorld from './components/HelloWorld.vue'
+  import TheWelcome from './components/TheWelcome.vue'
+  import PriceTotal from './components/PriceTotal.vue'
+  import Greeting from './components/Greeting.vue'
+  import FavoriteAnimal from './components/FavoriteAnimal.vue'
+  import UserCard from './components/UserCard.vue'
 </script>
 
 <template>
@@ -18,6 +21,9 @@ import FavoriteAnimal from './components/FavoriteAnimal.vue'
 
   <main>
     <TheWelcome />
+    <Greeting />
+    <PriceTotal />
+    <UserCard name="Tatjana" />
   </main>
 </template>
 
