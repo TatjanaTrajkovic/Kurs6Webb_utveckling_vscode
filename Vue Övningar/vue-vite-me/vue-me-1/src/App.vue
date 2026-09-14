@@ -1,6 +1,12 @@
 
 
 <script setup>
+
+  import {ref} from 'vue'
+
+  const userName = ref('Ana')
+  const userAge = ref(30)
+
   import HelloWorld from './components/HelloWorld.vue'
   import TheWelcome from './components/TheWelcome.vue'
   import PriceTotal from './components/PriceTotal.vue'
@@ -23,7 +29,8 @@
     <TheWelcome />
     <Greeting />
     <PriceTotal />
-    <UserCard name="Tatjana" />
+    <UserCard name="Tatjana" :age="42" />
+    <UserCard :name="userName" :age="userAge" />
   </main>
 </template>
 

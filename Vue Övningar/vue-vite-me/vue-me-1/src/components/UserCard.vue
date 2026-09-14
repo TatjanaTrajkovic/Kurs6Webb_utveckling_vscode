@@ -5,6 +5,10 @@
         name: {   // Jag förväntar mig en prop som heter name.
             type: String, //Den ska vara text (String).
             required: true // Den måste skickas (required: true).
+        },
+        age: { 
+            type: Number,
+            required: true
         }
     })
 
@@ -13,6 +17,7 @@
 <template>
 
     <p>Användare: {{ name }}</p>
+    <p>Age: {{ age }}</p>
     
 
 </template>
