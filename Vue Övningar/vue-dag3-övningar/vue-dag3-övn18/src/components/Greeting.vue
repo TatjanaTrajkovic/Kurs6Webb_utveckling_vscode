@@ -8,6 +8,7 @@
 
     function showGreeting(){
         greeting.value = `Hej ${name.value}!`
+        name.value = ''
     }
 
 </script>
