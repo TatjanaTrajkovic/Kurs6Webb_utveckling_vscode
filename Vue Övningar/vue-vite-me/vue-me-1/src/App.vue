@@ -16,6 +16,8 @@
 </script>
 
 <template>
+
+  
   <header>
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
@@ -29,9 +31,18 @@
     <TheWelcome />
     <Greeting />
     <PriceTotal />
+
+
+    <input type="text" v-model="userName">
+    <input type="number" v-model.number="userAge">
+
     <UserCard name="Tatjana" :age="42" />
     <UserCard :name="userName" :age="userAge" />
+
   </main>
+
+
+
 </template>
 
 <style scoped>
