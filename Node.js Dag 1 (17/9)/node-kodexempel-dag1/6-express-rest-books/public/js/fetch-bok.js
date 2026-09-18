@@ -9,7 +9,7 @@ function append(parent, el) {
 const ul = document.querySelector('#bok');
 
 async function getBooks() {
-    //const url = 'data/data.json';
+  // const url = 'data/data.json';
   const url = "http://localhost:3000/books/";
   try {
     const response = await fetch(url);

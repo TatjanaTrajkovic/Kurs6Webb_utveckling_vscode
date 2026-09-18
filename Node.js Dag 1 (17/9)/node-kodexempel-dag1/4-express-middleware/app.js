@@ -3,10 +3,10 @@ const app = express();
 const port = 3000;
 
 // Parse JSON bodies
-app.use(express.json());
+app.use(express.json());//detta en del av middleware som talar om att instansen app som innehåller express att kommer kunna hantera json format
 
 // For parsing application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true })); //detta hanterar formulär
 
 // Använder static files (i mappen public)
 // app.use anropas varje gång applikationen får en Request
