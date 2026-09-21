@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mina filmer</h1>
+
+    <div id="movies"></div>
+
+    <h2>Lägg till film</h2>
+
+    <!-- //Här sköter javaskript och fetch() POST-requesten, istället för action="/movies" method="POST" -->
+    <form id="movieForm">
+        <input type="text" id="title" placeholder="Filmens titel">
+        <input type="number" id="year" placeholder="År">
+        <button type="submit">Lägg till</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
