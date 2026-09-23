@@ -1,11 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
+    <h1>Mina böcker</h1>
+
+    <div id="books"></div>
+    <!-- javascript använder id="books" för att hitta elemnetet och lägga in böckerna där -->
+
+
+<h2>Lägg till en ny bok</h2>
+
+
+<!-- Med id="bookForm" kan javaskript hitta formuläret och reagera när användaren klickar på Lägg till bok -->
+<form id="bookForm">
+    <input type="text" id="title" placeholder="Bokens titel" required>
+
+    <input type="text" id="author" placeholder="Författare" required>
+
+    <input type="text" id="isbn" placeholder="ISBN" required>
+
+    <input type="number" id="price" placeholder="Pris" required>
+
+    <select id="category" required>
+        <option value="">Välj kategori</option>
+        <option value="1">Roman</option>
+        <option value="2">Barnbok</option>
+        <option value="3">Sci-fi</option>
+    </select>
+
+    <button type="submit">Lägg till bok</button>
+</form>
+
+<!-- Nu ska vi koppla formuläret till din POST-endpoint, som vi redan har testat i Insomnia. -->
     
+    <script src="js/fetch-bok.js"></script>
+    <script src="js/fetch-bok-post.js"></script>
+
 </body>
 </html>

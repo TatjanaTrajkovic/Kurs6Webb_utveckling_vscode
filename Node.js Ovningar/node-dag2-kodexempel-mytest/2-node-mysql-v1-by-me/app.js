@@ -155,3 +155,149 @@ function updateBook(bokForfattare, bokTitel, bokIsbn, bokPris, bokKategoriId, bo
         });
     });
 }
+
+
+app.put('/api/books', async (req, res) => {
+    const {
+        bokId,
+        bokForfattare,
+        bokTitel,
+        bokIsbn,
+        bokPris,
+        bokKategoriId
+    } = req.body;
+
+    try {
+        await updateBook(
+            bokForfattare,
+            bokTitel,
+            bokIsbn,
+            bokPris,
+            bokKategoriId,
+            bokId
+        );
+
+        res.json({
+            success: true,
+            message: 'Boken har uppdaterats!'
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
+
+function deleteBook(id) {
+    return new Promise((resolve, reject) => {
+
+        let sql = 'DELETE FROM bok WHERE bokId = ?';
+
+        connectionMySQL.query(sql, [id], (err, result) => {//[id] skickar ID-värdet till frågetecknet i SQL-frågan, så att MySQL vet vilken bok vi vill ta bort.
+            if (err) {
+                reject(err);
+            } else {
+                resolve(result);
+            }
+        });
+    });
+}
+//detta är sista delen av CRUD, DELETE endpointen.
+app.delete('/api/books/:id', async (req, res) => {
+
+    const { id } = req.params; //req.params hämtar värden från URL:en, exempelvis ID 4 i /api/books/4.
+
+    try {
+        const result = await deleteBook(id);
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({
+                success: false,
+                message: 'Boken finns inte!'
+            });
+        }
+
+        res.json({
+            success: true,
+            message: 'Boken har tagits bort!'
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
+
+// 1. Klienten skickar en DELETE-request
+//    Exempel: DELETE /api/books/4
+
+// 2. Express hämtar ID-numret
+//    const { id } = req.params
+//    Eftersom adressen slutar på /4 blir id lika med "4".
+
+// 3. Vi anropar funktionen
+//    await deleteBook(id) skickar ID-numret vidare till SQL-frågan.
+
+// 4. MySQL tar bort boken
+//    DELETE FROM bok WHERE bokId = ?
+
+// 5. Express skickar ett svar
+//    Om boken togs bort får klienten meddelandet Boken har tagits bort!.
+
+
+// Metod    Funktion.           SQL
+// GET      Hämta böcker        SELECT
+// POST     Skapa en bok        INSERT INTO
+// PUT      Uppdatera en bok    UPDATE
+// DELETE   Ta bort en bok      DELETE FROM
+
+
+function getBooksCategories() { //getBooksCategories() använder JOIN för att koppla ihop tabellerna bok och kategori, så att vi får kategorins namn i stället för bara dess ID.
+    return new Promise((resolve, reject) => {
+
+        let sql = `
+            SELECT
+                bok.bokId,
+                bok.bokTitel,
+                bok.bokForfattare,
+                bok.bokPris,
+                kategori.kategoriNamn
+            FROM bok
+            JOIN kategori
+            ON bok.bokKategoriId = kategori.kategoriId
+        `;
+
+        connectionMySQL.query(sql, (err, rows) => {//kör SQL-frågan oh får tillbaka resultatet i rows
+            if (err) {
+                reject(err);
+            } else {
+                resolve(rows);//gör resultatet tillgänglig för den kod som väntar på vår Promise
+            }
+        });
+    });
+}
+
+app.get('/api/books-categories', async (req, res) => {
+
+    try {
+        const books = await getBooksCategories();
+
+        res.json({ books });
+
+    } catch (error) {
+        res.status(500).json({
+            error: error.message
+        });
+    }
+});
+
+//Nu ska vi visa böckerna med HTML och fetch()
+//Frontend- HTML och Javascript anropar /api/books-categories med fetch
+//Http GET
+//Backend-Express hämtar böcker och kategorier från MySql
+//JSON-svar tillbaka till frontend
+//Böckerna visas på webbsidan
