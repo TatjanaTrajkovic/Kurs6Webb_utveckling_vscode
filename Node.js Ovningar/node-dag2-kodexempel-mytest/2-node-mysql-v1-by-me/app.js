@@ -4,12 +4,7 @@ const app = express()
 const cors = require('cors')
 const mysql = require('mysql2')
 
-const connectionMySQL = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'node1234',
-    database: 'dag2mysql'
-});
+const connectionMySQL = require('./connectionMySQL')
 
 app.use(express.json());//express.json() läser json som skickas från frontend och omvadlar den till ett javascript objekt som vi kan komma åt med req.body
 app.use(express.urlencoded({ extended: true }));
