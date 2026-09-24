@@ -1,0 +1,5 @@
+# MySQL-inloggningsuppgifter
+connectionMySQL.js
+
+# Installerade npm-paket
+node_modules/
